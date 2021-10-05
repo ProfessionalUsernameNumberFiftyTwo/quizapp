@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Item Descriptions",
+    "question": "Briefly stops enemies and enemy bullets. Can be used to steal from shops.",
+    "answers": ["Bullet Time", "Aged Bell", "Super Hot Watch", "Blue Guon Stone"],
+    "correctAnswer": "Aged Bell"
+  } ,
+  {
+    "category": "Item Descriptions",
+    "question": "Hitting an enemy refires the projectile at a nearby enemy.",
+    "answers": ["Shadow Bullets", "Zombie Bullets", "Chaos Bullets", "Angry Bullets"],
+    "correctAnswer": "Angry Bullets"
+  } ,
+  {
+    "category": "Gun Descriptions",
+    "question": "Fires a burst of four bullets connected by electricity.",
+    "answers": ["The Emperor", "Science Cannon", "Shock Rifle", "Quad Laser"],
+    "correctAnswer": "The Emperor"
+  },
+  {
+    "category": "Gun Descriptions",
+    "question": "Fires a stream of poison. Has a chance to poison enemies and leaves poison puddles on impact.",
+    "answers": ["Plague Pistol", "The Fat Line", "Plunger", "The Membrane"],
+    "correctAnswer": "Plunger"
+  },
+  {
+    "category": "NPCs",
+    "question": "Runs shops in the Gungeon.",
+    "answers": ["The Lost Adventurer", "Bello", "Resourceful Rat", "Doug"],
+    "correctAnswer": "Bello"
+  },
+  {
+    "category": "NPCs",
+    "question": "Allows the player to trade health for money.",
+    "answers": ["Witches", "Sorceress", "Vampire", "Sell Creep"],
+    "correctAnswer": "Vampire"
+  },
+  {
+    "category": "Synergies",
+    "question": "Which is needed for the Apiary synergy?",
+    "answers": ["Honeycomb", "Bumbullets", "Jar of Bees", "Box"],
+    "correctAnswer": "Box"
+  },
+  {
+    "category": "Synergies",
+    "question": "Which of these is needed for the Hot Head synergy?",
+    "answers": ["The Kiln", "Flame Hand", "Hot Lead", "Teapot"],
+    "correctAnswer": "The Kiln"
+  },
+  {
+    "category": "Enemies",
+    "question": "Charges towards the player, releasing bullets to the sides of itself.",
+    "answers": ["Chain Gunner", "Bullet Shark", "Lead Maiden", "Muzzle Wisp"],
+    "correctAnswer": "Bullet Shark"
+  },
+  {
+    "category": "Enemies",
+    "question": "Slowly walks towards the player, periodically firing four slithering lines of bullets.",
+    "answers": ["Executioner", "Professional", "Confirmed", "Mutant Shotgun Kin"],
+    "correctAnswer": "Confirmed"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Descripciones de Artículos",
+    "question": "Detiene brevemente a los enemigos y las balas enemigas. Se puede utilizar para robar en tiendas.",
+    "answers": ["Tiempo de Bala", "Campana Envejecida", "Super Reloj Caliente", "Piedra de Pistola Azul"],
+    "correctAnswer": "Campana Envejecida"
+  } ,
+  {
+    "category": "Descripciones de Artículos",
+    "question": "Golpear a un enemigo dispara el proyectil hacia un enemigo cercano.",
+    "answers": ["Balas de Sombra", "Balas de Zombies", "Balas del Caos", "Balas Enojadas"],
+    "correctAnswer": "Balas Enojadas"
+  } ,
+  {
+    "category": "Descripciones de Armas",
+    "question": "Dispara una ráfaga de cuatro balas conectadas por electricidad.",
+    "answers": ["El Emperador", "Cañón de Ciencia", "Rifle de Choque", "Láser Cuádruple"],
+    "correctAnswer": "El Emperador"
+  },
+  {
+    "category": "Descripciones de Armas",
+    "question": "Dispara un chorro de veneno. Tiene la posibilidad de envenenar a los enemigos y deja charcos de veneno al impactar.",
+    "answers": ["Pistola de Plaga", "La Línea de Grasa", "Jeringuilla", "La Membrana"],
+    "correctAnswer": "Jeringuilla"
+  },
+  {
+    "category": "Caracteres",
+    "question": "Dirige tiendas en Gungeon.",
+    "answers": ["El Aventurero Perdido", "Bello", "Rata Ingeniosa", "Doug"],
+    "correctAnswer": "Bello"
+  },
+  {
+    "category": "Caracteres",
+    "question": "Permite al jugador intercambiar salud por dinero.",
+    "answers": ["Brujas", "Hechicera", "Vampira", "Vendedor Espeluznante"],
+    "correctAnswer": "Vampira"
+  },
+  {
+    "category": "Sinergias",
+    "question": "¿Qué se necesita para la sinergia Colmenar?",
+    "answers": ["Panal", "Balas de Abeja", "Tarro de Abejas", "Caja"],
+    "correctAnswer": "Caja"
+  },
+  {
+    "category": "Sinergias",
+    "question": "¿Cuál de estos es necesario para la sinergia Cabeza Caliente?",
+    "answers": ["El Horno", "Mano de Fuego", "Plomo Caliente", "Tetera"],
+    "correctAnswer": "El Horno"
+  },
+  {
+    "category": "Enemigos",
+    "question": "Carga hacia el jugador, liberando balas a los lados de sí mismo.",
+    "answers": ["Artillero de Cadena", "Tiburon Bala", "Doncella de Plomo", "Nube de Humo"],
+    "correctAnswer": "Tiburon Bala"
+  },
+  {
+    "category": "Enemigos",
+    "question": "Camina lentamente hacia el jugador, disparando periódicamente cuatro líneas de balas deslizantes.",
+    "answers": ["Verdugo", "Profesional", "Confirmado", "Pariente de Escopeta Mutante"],
+    "correctAnswer": "Confirmado"
+  }
+]

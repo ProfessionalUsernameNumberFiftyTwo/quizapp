@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="start_text">Haga clic en cualquier botón para comenzar.</string>
+    <string name="score">"Puntos: "</string>
+    <string name="final_score">"Puntuación Final: "</string>
+</resources>

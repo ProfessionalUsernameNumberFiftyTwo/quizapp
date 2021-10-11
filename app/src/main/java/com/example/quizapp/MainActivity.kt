@@ -66,8 +66,8 @@ class MainActivity : AppCompatActivity() {
         var score = 0
         var initialClick = true
 
-        questionText.text = "Click any button to start."
-        scoreText.text = "Score: $score"
+        questionText.text = resources.getString(R.string.start_text)
+        scoreText.text = resources.getString(R.string.score) + "$score"
         answer1.text = ""
         answer2.text = ""
         answer3.text = ""
@@ -80,14 +80,14 @@ class MainActivity : AppCompatActivity() {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
                 score = quiz.checkAnswer(answer1.text.toString())
                 // update the score text view based on the current score
-                scoreText.text = "Score: $score"
+                scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
                 // set the question text and button text and button text to the new question and answer choices
                 if (quiz.areQuestionsRemaining()) {
                     newQuestions(quiz)
                 } else {
                     // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = "Final Score: $score"
+                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
                     finishGame()
                 }
             }
@@ -102,14 +102,14 @@ class MainActivity : AppCompatActivity() {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
                 score = quiz.checkAnswer(answer2.text.toString())
                 // update the score text view based on the current score
-                scoreText.text = "Score: $score"
+                scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
                 // set the question text and button text and button text to the new question and answer choices
                 if (quiz.areQuestionsRemaining()) {
                     newQuestions(quiz)
                 } else {
                     // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = "Final Score: $score"
+                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
                     finishGame()
                 }
             }
@@ -124,14 +124,14 @@ class MainActivity : AppCompatActivity() {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
                 score = quiz.checkAnswer(answer3.text.toString())
                 // update the score text view based on the current score
-                scoreText.text = "Score: $score"
+                scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
                 // set the question text and button text and button text to the new question and answer choices
                 if (quiz.areQuestionsRemaining()) {
                     newQuestions(quiz)
                 } else {
                     // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = "Final Score: $score"
+                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
                     finishGame()
                 }
             }
@@ -146,14 +146,14 @@ class MainActivity : AppCompatActivity() {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
                 score = quiz.checkAnswer(answer4.text.toString())
                 // update the score text view based on the current score
-                scoreText.text = "Score: $score"
+                scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
                 // set the question text and button text and button text to the new question and answer choices
                 if (quiz.areQuestionsRemaining()) {
                     newQuestions(quiz)
                 } else {
                     // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = "Final Score: $score"
+                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
                     finishGame()
                 }
             }

@@ -1,19 +1,21 @@
 package com.example.quizapp
 
+import android.widget.Toast
+
 class Quiz(var questions: MutableList<Question>) {
     var score = 0
     var questionNumber = 0
     lateinit var currentQuestion: Question
 
-    fun checkAnswer(answer: String): Int {
+    fun checkAnswer(answer: String): Boolean {
         // if answer is correct, increase score, if not, decrease score
         if (answer.equals(currentQuestion.correctAnswer)) {
             score++
-            return score
+            return true
         }
         else {
             score--
-            return score
+            return false
         }
     }
 

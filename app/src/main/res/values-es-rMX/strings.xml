@@ -4,4 +4,6 @@
     <string name="start_text">Haga clic en cualquier botón para comenzar.</string>
     <string name="score">"Puntos: "</string>
     <string name="final_score">"Puntuación Final: "</string>
+    <string name="correct">¡Correcto!</string>
+    <string name="incorrect">Incorrecto.</string>
 </resources>

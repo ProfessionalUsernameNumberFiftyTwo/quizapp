@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -66,19 +67,34 @@ class MainActivity : AppCompatActivity() {
         var score = 0
         var initialClick = true
 
+        mainView.setBackgroundColor(Color.parseColor("#b900c9"))
         questionText.text = resources.getString(R.string.start_text)
+        questionText.setTextColor(Color.parseColor("#262626"))
         scoreText.text = resources.getString(R.string.score) + "$score"
+        scoreText.setTextColor(Color.parseColor("#262626"))
         answer1.text = ""
+        answer1.setBackgroundColor(Color.parseColor("#c98300"))
         answer2.text = ""
+        answer2.setBackgroundColor(Color.parseColor("#c98300"))
         answer3.text = ""
+        answer3.setBackgroundColor(Color.parseColor("#c98300"))
         answer4.text = ""
+        answer4.setBackgroundColor(Color.parseColor("#c98300"))
         finalScoreText.visibility = View.GONE
 
         // MainActivity is in charge of the UI and passing information to and from the Quiz class
         answer1.setOnClickListener {
             if(!initialClick) {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                score = quiz.checkAnswer(answer1.text.toString())
+                if(quiz.checkAnswer(answer1.text.toString()))
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+                score = quiz.score
                 // update the score text view based on the current score
                 scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
@@ -100,7 +116,15 @@ class MainActivity : AppCompatActivity() {
         answer2.setOnClickListener {
             if(!initialClick) {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                score = quiz.checkAnswer(answer2.text.toString())
+                if(quiz.checkAnswer(answer2.text.toString()))
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+                score = quiz.score
                 // update the score text view based on the current score
                 scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
@@ -122,7 +146,15 @@ class MainActivity : AppCompatActivity() {
         answer3.setOnClickListener {
             if(!initialClick) {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                score = quiz.checkAnswer(answer3.text.toString())
+                if(quiz.checkAnswer(answer3.text.toString()))
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+                score = quiz.score
                 // update the score text view based on the current score
                 scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...
@@ -144,7 +176,15 @@ class MainActivity : AppCompatActivity() {
         answer4.setOnClickListener {
             if(!initialClick) {
                 // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                score = quiz.checkAnswer(answer4.text.toString())
+                if(quiz.checkAnswer(answer4.text.toString()))
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+                }
+                score = quiz.score
                 // update the score text view based on the current score
                 scoreText.text = resources.getString(R.string.score) + "$score"
                 // ask the quiz if there are more question, and if there are...

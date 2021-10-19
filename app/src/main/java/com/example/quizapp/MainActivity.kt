@@ -59,18 +59,17 @@ class MainActivity : AppCompatActivity() {
 
         // create Quiz object using the list of questions you just read
         // do any initial setup of the layout to show the first question
-        var quiz = Quiz(questions)
+        val quiz = Quiz(questions)
 
         // any quiz-related actions -- scorekeeping, answer-checking, question number tracking, and checking whether or not there are remaining questions
         // these are all the duties of the Quiz class
 
-        var score = 0
         var initialClick = true
 
         mainView.setBackgroundColor(Color.parseColor("#b900c9"))
         questionText.text = resources.getString(R.string.start_text)
         questionText.setTextColor(Color.parseColor("#262626"))
-        scoreText.text = resources.getString(R.string.score) + "$score"
+        scoreText.text = resources.getString(R.string.score, quiz.score)
         scoreText.setTextColor(Color.parseColor("#262626"))
         answer1.text = ""
         answer1.setBackgroundColor(Color.parseColor("#c98300"))
@@ -85,27 +84,7 @@ class MainActivity : AppCompatActivity() {
         // MainActivity is in charge of the UI and passing information to and from the Quiz class
         answer1.setOnClickListener {
             if(!initialClick) {
-                // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                if(quiz.checkAnswer(answer1.text.toString()))
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-                }
-                score = quiz.score
-                // update the score text view based on the current score
-                scoreText.text = resources.getString(R.string.score) + "$score"
-                // ask the quiz if there are more question, and if there are...
-                // set the question text and button text and button text to the new question and answer choices
-                if (quiz.areQuestionsRemaining()) {
-                    newQuestions(quiz)
-                } else {
-                    // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
-                    finishGame()
-                }
+                updateQuiz(quiz, answer1.text.toString())
             }
             else {
                 newQuestions(quiz)
@@ -115,27 +94,7 @@ class MainActivity : AppCompatActivity() {
 
         answer2.setOnClickListener {
             if(!initialClick) {
-                // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                if(quiz.checkAnswer(answer2.text.toString()))
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-                }
-                score = quiz.score
-                // update the score text view based on the current score
-                scoreText.text = resources.getString(R.string.score) + "$score"
-                // ask the quiz if there are more question, and if there are...
-                // set the question text and button text and button text to the new question and answer choices
-                if (quiz.areQuestionsRemaining()) {
-                    newQuestions(quiz)
-                } else {
-                    // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
-                    finishGame()
-                }
+                updateQuiz(quiz, answer2.text.toString())
             }
             else {
                 newQuestions(quiz)
@@ -145,27 +104,7 @@ class MainActivity : AppCompatActivity() {
 
         answer3.setOnClickListener {
             if(!initialClick) {
-                // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                if(quiz.checkAnswer(answer3.text.toString()))
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-                }
-                score = quiz.score
-                // update the score text view based on the current score
-                scoreText.text = resources.getString(R.string.score) + "$score"
-                // ask the quiz if there are more question, and if there are...
-                // set the question text and button text and button text to the new question and answer choices
-                if (quiz.areQuestionsRemaining()) {
-                    newQuestions(quiz)
-                } else {
-                    // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
-                    finishGame()
-                }
+                updateQuiz(quiz, answer3.text.toString())
             }
             else {
                 newQuestions(quiz)
@@ -175,27 +114,7 @@ class MainActivity : AppCompatActivity() {
 
         answer4.setOnClickListener {
             if(!initialClick) {
-                // tell the quiz what was clicked on and let the quiz determine if the answer was correct
-                if(quiz.checkAnswer(answer4.text.toString()))
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
-                }
-                score = quiz.score
-                // update the score text view based on the current score
-                scoreText.text = resources.getString(R.string.score) + "$score"
-                // ask the quiz if there are more question, and if there are...
-                // set the question text and button text and button text to the new question and answer choices
-                if (quiz.areQuestionsRemaining()) {
-                    newQuestions(quiz)
-                } else {
-                    // if there aren't any more questions, then hide a bunch of the UI and give the final score
-                    finalScoreText.text = resources.getString(R.string.final_score) + "$score"
-                    finishGame()
-                }
+                updateQuiz(quiz, answer4.text.toString())
             }
             else {
                 newQuestions(quiz)
@@ -203,6 +122,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun updateQuiz (quiz: Quiz, answer: String) {
+        // tell the quiz what was clicked on and let the quiz determine if the answer was correct
+        if(quiz.checkAnswer(answer))
+        {
+            Toast.makeText(this@MainActivity, resources.getString(R.string.correct), Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
+            Toast.makeText(this@MainActivity, resources.getString(R.string.incorrect), Toast.LENGTH_SHORT).show()
+        }
+        // update the score text view based on the current score
+        scoreText.text = resources.getString(R.string.score, quiz.score)
+        // ask the quiz if there are more question, and if there are...
+        // set the question text and button text and button text to the new question and answer choices
+        if (quiz.areQuestionsRemaining()) {
+            newQuestions(quiz)
+        } else {
+            // if there aren't any more questions, then hide a bunch of the UI and give the final score
+            finalScoreText.text = resources.getString(R.string.final_score, quiz.score)
+            finishGame()
+        }
     }
 
     private fun finishGame() {
